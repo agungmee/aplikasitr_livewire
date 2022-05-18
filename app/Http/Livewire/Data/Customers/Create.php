@@ -28,8 +28,6 @@ class Create extends Component
     public $customer_postal_code;
     public $customer_contact;
     public $customer_type;
-    public $customer_long;
-    public $customer_lat;
     public $customer_ktp_name;
     public $customer_ktp_no;
     public $customer_npwp_no;
@@ -81,21 +79,21 @@ class Create extends Component
 
         $userid = date('dmY_his');
 
-        $ktp_image_name = date('Y-m-d') . "_" . "_ktp_" . "." . $this->customer_ktp_image->extension();
+        $ktp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp_" . "." . $this->customer_ktp_image->extension();
         $this->customer_ktp_image->storeAs('photos', $ktp_image_name);
         
-        $npwp_image_name = date('Y-m-d') . "_" . "_npwp_" . "." . $this->customer_npwp_image->extension();
+        $npwp_image_name = md5(date('Y-m-d').rand()) . "_" . "npwp_" . "." . $this->customer_npwp_image->extension();
         $this->customer_npwp_image->storeAs('photos', $npwp_image_name);
-        
-        $sppkp_image_name = date('Y-m-d') . "_" . "_sppkp_" . "." . $this->customer_sppkp_image->extension();
+
+        $sppkp_image_name = md5(date('Y-m-d').rand()) . "_" . "sppkp_" . "." . $this->customer_sppkp_image->extension();
         $this->customer_sppkp_image->storeAs('photos', $sppkp_image_name);
         
-        $store1_image_name = date('Y-m-d') . "_" . "_store1_" . "." . $this->customer_store1_image->extension();
+        $store1_image_name = md5(date('Y-m-d').rand()) . "_" . "store1_" . "." . $this->customer_store1_image->extension();
         $this->customer_store1_image->storeAs('photos', $store1_image_name);
         
-        $store2_image_name = date('Y-m-d') . "_" . "_store2_" . "." . $this->customer_store2_image->extension();
+        $store2_image_name = md5(date('Y-m-d').rand()) . "_" . "store2_" . "." . $this->customer_store2_image->extension();
         $this->customer_store2_image->storeAs('photos', $store2_image_name);
-
+        
         $customer = Customer::create([
             'customer_code' => $this->customer_code,
             'customer_name' => $this->customer_name,
@@ -111,8 +109,6 @@ class Create extends Component
             'customer_postal_code' => $this->customer_postal_code,
             'customer_contact' => $this->customer_contact,
             'customer_type' => $this->customer_type,
-            'customer_long' => $this->customer_long,
-            'customer_lat' => $this->customer_lat,
             'customer_ktp_name' => $this->customer_ktp_name,
             'customer_ktp_no' => $this->customer_ktp_no,
             'customer_npwp_no' => $this->customer_npwp_no,

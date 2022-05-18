@@ -68,10 +68,10 @@
                                                                 <select wire:model.lazy="customer_cabang" class="form-control @error('customer_cabang') is-invalid @enderror">
                                                                     <option selected>-- Pilih Cabang --</option>
                                                                     <option value="Sunter">Sunter</option>
-                                                                    <option value="Sunter">Glodok</option>
-                                                                    <option value="Sunter">Kenari</option>
-                                                                    <option value="Sunter">Tebet</option>
-                                                                    <option value="Sunter">Tangerang</option>
+                                                                    <option value="Glodok">Glodok</option>
+                                                                    <option value="Kenari">Kenari</option>
+                                                                    <option value="Tebet">Tebet</option>
+                                                                    <option value="Tangerang">Tangerang</option>
                                                                 </select>
                                                                 @error('customer_cabang')
                                                                 <div class="invalid-feedback">
@@ -213,20 +213,6 @@
                                                         
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="font-weight-bold">Longitude</label>
-                                                                <input type="text" class="form-control" placeholder="Longitude" disabled>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label class="font-weight-bold">Latitude</label>
-                                                                <input type="text" class="form-control" placeholder="Latitude" disabled>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
                                                                 <label class="font-weight-bold">Nama di KTP</label>
                                                                 <input type="text" wire:model.lazy="customer_ktp_name" class="form-control @error('customer_ktp_name') is-invalid @enderror"
                                                                     placeholder="Nama di KTP">
@@ -348,7 +334,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Sales Philips</label>
-                                                                <select wire:model.lazy="sales_philips_name" class="form-control" id="" @error('sales_philips_name') is-invalid @enderror>
+                                                                <select wire:model.lazy="sales_philips_name" class="form-control @error('sales_philips_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Nama Sales Philips --</option>
                                                                     <option value="Imam Sudadi">Imam Sudadi</option>
                                                                     <option value="Slamet Widiono">Slamet Widiono</option>
@@ -364,7 +350,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Sales Supow</label>
-                                                                <select wire:model.lazy="sales_supow_name" class="form-control" id="" @error('sales_supow_name') is-invalid @enderror>
+                                                                <select wire:model.lazy="sales_supow_name" class="form-control @error('sales_supow_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Supow --</option>
                                                                     <option value="Imam Sudadi">Imam Sudadi</option>
                                                                     <option value="Slamet Widiono">Slamet Widiono</option>
@@ -380,7 +366,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Sales Pengaju</label>
-                                                                <select wire:model.lazy="sales_pengaju" class="form-control" id="" @error('sales_pengaju') is-invalid @enderror>
+                                                                <select wire:model.lazy="sales_pengaju" class="form-control @error('sales_pengaju') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Pengaju --</option>
                                                                     <option value="Imam Sudadi">Imam Sudadi</option>
                                                                     <option value="Slamet Widiono">Slamet Widiono</option>
@@ -396,7 +382,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">DA PIC</label>
-                                                                <select wire:model.lazy="pic_sas" class="form-control" id="" @error('pic_sas') is-invalid @enderror>
+                                                                <select wire:model.lazy="pic_sas" class="form-control @error('pic_sas') is-invalid @enderror">
                                                                     <option selected>-- Pilih DA PIC --</option>
                                                                     <option value="Imam Sudadi">Imam Sudadi</option>
                                                                     <option value="Slamet Widiono">Slamet Widiono</option>
@@ -417,7 +403,7 @@
                                                                         <span class="input-group-text" id="">Upload</span>
                                                                         </div>
                                                                         <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_ktp_image" type="file" class="custom-file-input" id="" aria-describedby="" @error('customer_ktp_image') is-invalid @enderror>
+                                                                        <input wire:model.lazy="customer_ktp_image" type="file" class="custom-file-input" id="" aria-describedby="">
                                                                         <label class="custom-file-label" for="">Pilih File</label>
                                                                         </div>
                                                                     </div>
@@ -437,7 +423,7 @@
                                                                         <span class="input-group-text" id="">Upload</span>
                                                                         </div>
                                                                         <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_npwp_image" type="file" class="custom-file-input" id="" aria-describedby="" @error('customer_npwp_image') is-invalid @enderror>
+                                                                        <input wire:model.lazy="customer_npwp_image" type="file" class="custom-file-input" id="" aria-describedby="">
                                                                         <label class="custom-file-label" for="">Pilih File</label>
                                                                         </div>
                                                                     </div>
@@ -457,7 +443,7 @@
                                                                         <span class="input-group-text" id="">Upload</span>
                                                                         </div>
                                                                         <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_sppkp_image" type="file" class="custom-file-input" id="" aria-describedby="" @error('customer_sppkp_image') is-invalid @enderror>
+                                                                        <input wire:model.lazy="customer_sppkp_image" type="file" class="custom-file-input" id="" aria-describedby="">
                                                                         <label class="custom-file-label" for="">Pilih File</label>
                                                                         </div>
                                                                     </div>

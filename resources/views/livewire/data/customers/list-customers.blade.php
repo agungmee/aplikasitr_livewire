@@ -30,6 +30,7 @@
                                     <tr>
                                         <th scope="col">KODE</th>
                                         <th scope="col">NAMA CUSTOMER</th>
+                                        <th scope="col">GRUP CUSTOMER</th>
                                         <th scope="col">ID CUSTOMER</th>
                                         <th scope="col">PASSWORD</th>
                                         <th scope="col">CABANG</th>
@@ -64,6 +65,8 @@
                                         <th scope="col">FOTO TOKO2</th>
                                         <th scope="col">CUSTOMER CEK</th>
                                         <th scope="col">ADMIN CEK</th>
+                                        <th scope="col">WAKTU CUSTOMER CEK</th>
+                                        <th scope="col">WAKTU ADMIN CEK</th>
                                         <th scope="col">DIBUAT OLEH</th>
                                         <th scope="col">WAKTU DIBUAT</th>
                                         <th scope="col">DIUPDATE OLEH</th>
@@ -76,6 +79,7 @@
                                     <tr>
                                         <td>{{ $customer->customer_code }}</td>
                                         <td>{{ $customer->customer_name }}</td>
+                                        <td>{{ $customer->customer_group }}</td>
                                         <td style="background-color:antiquewhite">{{ $customer->customer_userid }}</td>
                                         <td style="background-color:antiquewhite">{{ $customer->customer_password }}</td>
                                         <td>{{ $customer->customer_cabang }}</td>
@@ -99,27 +103,29 @@
                                         <td>{{ $customer->customer_phone1 }}</td>
                                         <td>{{ $customer->customer_phone2 }}</td>
                                         <td>{{ $customer->customer_birthdate }}</td>
-                                        <td>{{ $customer->customer_philips_name }}</td>
-                                        <td>{{ $customer->customer_supow_name }}</td>
-                                        <td>{{ $customer->customer_pengaju }}</td>
+                                        <td>{{ $customer->sales_philips_name }}</td>
+                                        <td>{{ $customer->sales_supow_name }}</td>
+                                        <td>{{ $customer->sales_pengaju }}</td>
                                         <td>{{ $customer->pic_sas }}</td>
                                         <td>
-                                            <img width="100px" src=" /storage/photos/{{$customer->customer_ktp_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_ktp_image}} " alt="" srcset="">
                                         </td>
                                         <td>
-                                            <img width="100px" src=" /storage/photos/{{$customer->customer_npwp_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_npwp_image}} " alt="" srcset="">
                                         </td>
                                         <td>
-                                            <img width="100px" src=" /storage/photos/{{$customer->customer_sppkp_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_sppkp_image}} " alt="" srcset="">
                                         </td>
                                         <td>
-                                            <img width="100px" src=" /storage/photos/{{$customer->customer_store1_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_store1_image}} " alt="" srcset="">
                                         </td>
                                         <td>
-                                            <img width="100px" src=" /storage/photos/{{$customer->customer_store2_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_store2_image}} " alt="" srcset="">
                                         </td>
                                         <td>{{ $customer->customer_check }}</td>
                                         <td>{{ $customer->admin_check }}</td>
+                                        <td>{{ $customer->update_time_customer }}</td>
+                                        <td>{{ $customer->update_time_admin }}</td>
                                         <td>{{ $customer->created_by }}</td>
                                         <td>{{ $customer->created_at }}</td>
                                         <td>{{ $customer->updated_by }}</td>
