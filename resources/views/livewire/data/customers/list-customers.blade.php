@@ -131,7 +131,7 @@
                                         <td>{{ $customer->updated_by }}</td>
                                         <td>{{ $customer->updated_at }}</td>
                                         <td class="text-center">
-                                            <a href="" class="btn btn-sm btn-primary">EDIT</a>
+                                            <a href=" {{route('data.customers.editcustomer', $customer->id)}} " class="btn btn-sm btn-primary">EDIT</a>
                                             <button class="btn btn-sm btn-danger">DELETE</button>
                                         </td>
                                     </tr>

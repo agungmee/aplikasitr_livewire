@@ -463,7 +463,7 @@
                                                                         <span class="input-group-text" id="">Upload</span>
                                                                         </div>
                                                                         <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_store1_image" type="file" class="custom-file-input" id="" aria-describedby="" @error('customer_store1_image') is-invalid @enderror>
+                                                                        <input wire:model.lazy="customer_store1_image" type="file" class="custom-file-input" id="" aria-describedby="">
                                                                         <label class="custom-file-label" for="">Pilih File</label>
                                                                         </div>
                                                                     </div>
@@ -483,7 +483,7 @@
                                                                         <span class="input-group-text" id="">Upload</span>
                                                                         </div>
                                                                         <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_store2_image" type="file" class="custom-file-input" id="" aria-describedby="" @error('customer_store2_image') is-invalid @enderror>
+                                                                        <input wire:model.lazy="customer_store2_image" type="file" class="custom-file-input" id="" aria-describedby="">
                                                                         <label class="custom-file-label" for="">Pilih File</label>
                                                                         </div>
                                                                     </div>

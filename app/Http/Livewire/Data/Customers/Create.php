@@ -79,19 +79,19 @@ class Create extends Component
 
         $userid = date('dmY_his');
 
-        $ktp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp_" . "." . $this->customer_ktp_image->extension();
+        $ktp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
         $this->customer_ktp_image->storeAs('photos', $ktp_image_name);
         
-        $npwp_image_name = md5(date('Y-m-d').rand()) . "_" . "npwp_" . "." . $this->customer_npwp_image->extension();
+        $npwp_image_name = md5(date('Y-m-d').rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
         $this->customer_npwp_image->storeAs('photos', $npwp_image_name);
 
-        $sppkp_image_name = md5(date('Y-m-d').rand()) . "_" . "sppkp_" . "." . $this->customer_sppkp_image->extension();
+        $sppkp_image_name = md5(date('Y-m-d').rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
         $this->customer_sppkp_image->storeAs('photos', $sppkp_image_name);
         
-        $store1_image_name = md5(date('Y-m-d').rand()) . "_" . "store1_" . "." . $this->customer_store1_image->extension();
+        $store1_image_name = md5(date('Y-m-d').rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
         $this->customer_store1_image->storeAs('photos', $store1_image_name);
         
-        $store2_image_name = md5(date('Y-m-d').rand()) . "_" . "store2_" . "." . $this->customer_store2_image->extension();
+        $store2_image_name = md5(date('Y-m-d').rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
         $this->customer_store2_image->storeAs('photos', $store2_image_name);
         
         $customer = Customer::create([
