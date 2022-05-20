@@ -394,104 +394,57 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
-                                                         
+                                                        
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Foto KTP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_ktp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                @error('customer_ktp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                <div class="input-group mb-3">
+                                                                    <input name="customer_ktp_image" type="file" wire:model.lazy="customer_ktp_image" class="form-control" id="inputGroupFile02">
+                                                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                                                 </div>
+                                                                @error('customer_ktp_image')
+                                                                    {{ $message }}
                                                                 @enderror
                                                             </div>
                                                         </div>
-                                                        
+                                                         
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Foto NPWP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_npwp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                @error('customer_npwp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                                @enderror
+                                                                <div class="input-group mb-3">
+                                                                    <input type="file" wire:model.lazy="customer_npwp_image" class="form-control" id="inputGroupFile02">
+                                                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                </div>                                                                  
                                                             </div>
                                                         </div>
-                                                        
+                                                         
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Foto SPPKP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_sppkp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                @error('customer_sppkp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                                @enderror
+                                                                <div class="input-group mb-3">
+                                                                    <input type="file" wire:model.lazy="customer_sppkp_image" class="form-control" id="inputGroupFile02">
+                                                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                </div>                                                                  
                                                             </div>
                                                         </div>
-                                                        
+                                                         
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="font-weight-bold">Foto Toko1</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_store1_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                @error('customer_store1_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                                @enderror
+                                                                <label class="font-weight-bold">Foto Store1</label>
+                                                                <div class="input-group mb-3">
+                                                                    <input type="file" wire:model.lazy="customer_store1_image" class="form-control" id="inputGroupFile02">
+                                                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                </div>                                                                  
                                                             </div>
                                                         </div>
-                                                        
+                                                         
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="font-weight-bold">Foto Toko2</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model.lazy="customer_store2_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                @error('customer_store2_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                                @enderror
+                                                                <label class="font-weight-bold">Foto Store2</label>
+                                                                <div class="input-group mb-3">
+                                                                    <input type="file" wire:model.lazy="customer_store2_image" class="form-control" id="inputGroupFile02">
+                                                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                </div>                                                                  
                                                             </div>
                                                         </div>
                                                     

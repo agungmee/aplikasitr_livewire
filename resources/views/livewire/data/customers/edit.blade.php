@@ -34,7 +34,8 @@
                                                 <h5 class="text-center"> <i class="fa fa-user-plus"></i> UPDATE DATA CUSTOMER</h5>
                                                 <hr>
                                                 @csrf
-                                                <form wire:submit.prevent="update">
+                                                <form wire:submit.prevent="update" enctype="multipart/form-data">
+                                                        <div>
                                                         <input type="hidden" wire:model="customerId">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
@@ -394,108 +395,110 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
-                                                         
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
+                                                                                                                
+                                                        <div class="form-inline">
+                                                            <div class="col-md-12">
                                                                 <label class="font-weight-bold">Foto KTP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model="customer_ktp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
+                                                                <div class="form-group">
+                                                                    
+                                                                    <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_ktp_image}} " alt="" srcset="">
+                                                                    
+                                                                    <div class="input-group mb-3 ml-5">
+                                                                        <input name="customer_ktp_image" type="file" wire:model="customer_ktp_image" class="form-control" id="inputGroupFile02"">
+                                                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                    </div>                                                                  
+                                                                    @error('customer_ktp_image')
+                                                                    <div class="invalid-feedback">
+                                                                        {{ $message }}
                                                                     </div>
-                                                                @error('customer_ktp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                    @enderror
                                                                 </div>
-                                                                @enderror
                                                             </div>
                                                         </div>
-                                                        
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
+
+
+                                                        <div class="form-inline">
+                                                            <div class="col-md-12">
                                                                 <label class="font-weight-bold">Foto NPWP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model="customer_npwp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
+                                                                <div class="form-group">
+
+                                                                    <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_npwp_image}} " alt="" srcset="">
+                                                                    
+                                                                    <div class="input-group mb-3 ml-5">
+                                                                        <input name="customer_npwp_image" type="file" wire:model="customer_npwp_image" class="form-control" id="inputGroupFile02">
+                                                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                    </div>                                                                  
+                                                                    @error('customer_npwp_image')
+                                                                    <div class="invalid-feedback">
+                                                                        {{ $message }}
                                                                     </div>
-                                                                @error('customer_npwp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                    @enderror
                                                                 </div>
-                                                                @enderror
                                                             </div>
                                                         </div>
                                                         
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
+                                                        <div class="form-inline">
+                                                            <div class="col-md-12">
                                                                 <label class="font-weight-bold">Foto SPPKP</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model="customer_sppkp_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
+                                                                <div class="form-group">
+                                                                    
+                                                                    <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_sppkp_image}} " alt="" srcset="">
+                                                                    
+                                                                    <div class="input-group mb-3 ml-5">
+                                                                        <input type="file" wire:model="customer_sppkp_image" class="form-control" id="inputGroupFile02">
+                                                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                    </div>                                                                  
+                                                                    @error('customer_sppkp_image')
+                                                                    <div class="invalid-feedback">
+                                                                        {{ $message }}
                                                                     </div>
-                                                                @error('customer_sppkp_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                    @enderror
                                                                 </div>
-                                                                @enderror
                                                             </div>
                                                         </div>
                                                         
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label class="font-weight-bold">Foto Toko1</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model="customer_store1_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
+                                                        <div class="form-inline">
+                                                            <div class="col-md-12">
+                                                                <label class="font-weight-bold">Foto STORE1</label>
+                                                                <div class="form-group">
+                                                                    
+                                                                    <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_store1_image}} " alt="" srcset="">
+                                                                    
+                                                                    <div class="input-group mb-3 ml-5">
+                                                                        <input type="file" wire:model="customer_store1_image" class="form-control" id="inputGroupFile02">
+                                                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                    </div>                                                                  
+                                                                    @error('customer_store1_image')
+                                                                    <div class="invalid-feedback">
+                                                                        {{ $message }}
                                                                     </div>
-                                                                @error('customer_store1_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                    @enderror
                                                                 </div>
-                                                                @enderror
                                                             </div>
                                                         </div>
                                                         
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label class="font-weight-bold">Foto Toko2</label>
-                                                                    <div class="input-group mb-3">
-                                                                        <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="">Upload</span>
-                                                                        </div>
-                                                                        <div class="custom-file">
-                                                                        <input wire:model="customer_store2_image" type="file" class="custom-file-input" id="" aria-describedby="">
-                                                                        <label class="custom-file-label" for="">Pilih File</label>
-                                                                        </div>
+                                                        <div class="form-inline mb-4">
+                                                            <div class="col-md-12">
+                                                                <label class="font-weight-bold">Foto STORE2</label>
+                                                                <div class="form-group">
+                                                                    
+                                                                    <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_store2_image}} " alt="" srcset="">
+                                                                    
+                                                                    <div class="input-group mb-3 ml-5">
+                                                                        <input type="file" wire:model="customer_store2_image" class="form-control" id="inputGroupFile02">
+                                                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                                                    </div>                                                                  
+                                                                    @error('customer_store2_image')
+                                                                    <div class="invalid-feedback">
+                                                                        {{ $message }}
                                                                     </div>
-                                                                @error('customer_store2_image')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                                    @enderror
                                                                 </div>
-                                                                @enderror
                                                             </div>
                                                         </div>
                                                     
-                                                    <button type="submit" class="btn btn-primary btn-block">UPDATE DATA</button>
+                                                        <button type="submit" class="btn btn-primary btn-block">UPDATE DATA</button>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>

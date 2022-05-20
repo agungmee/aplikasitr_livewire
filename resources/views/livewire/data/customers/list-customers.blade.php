@@ -23,7 +23,17 @@
                         <h5> <i class="fa-solid fa-users"></i> CUSTOMERS</h5>
                         <hr>
                         <div>
-                            <a href="/admin/createcustomer" class="btn btn-md btn-success mb-3">TAMBAH CUSTOMER</a>
+                            <div class="d-flex justify-content-between" style="white-space: nowrap">
+                                
+                                <div>
+                                <a href="/admin/createcustomer" class="btn btn-md btn-success mb-3">TAMBAH CUSTOMER</a>
+                                </div>
+
+                                <div>
+                                <input class="form-control mb-3" type="text" wire:model="search" placeholder="Search" aria-label="search">
+                                </div>
+                            
+                            </div>
                             <div class="table-responsive">
                             <table class="table table-bordered" style="white-space: nowrap">
                                 <thead class="thead-dark" style="text-align: center">
@@ -132,7 +142,7 @@
                                         <td>{{ $customer->updated_at }}</td>
                                         <td class="text-center">
                                             <a href=" {{route('data.customers.editcustomer', $customer->id)}} " class="btn btn-sm btn-primary">EDIT</a>
-                                            <button class="btn btn-sm btn-danger">DELETE</button>
+                                            <button wire:click="destroy({{$customer->id}})" class="btn btn-sm btn-danger">DELETE</button>
                                         </td>
                                     </tr>
                                     @endforeach
