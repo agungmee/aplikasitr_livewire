@@ -11,8 +11,8 @@ class ListCustomers extends Component
 {   
     use WithPagination;
 
+    protected $updatesQueryString = ['search'];
     public $search;
-    protected $queryString = ['search'];
 
     public function destroy($customerId)
     {   
@@ -32,7 +32,12 @@ class ListCustomers extends Component
     public function render()
     {   
         return view('livewire.data.customers.list-customers', [
-            'customers' => Customer::latest()->paginate(10)
+            'customers' => $this->search === null ?
+                Customer::latest()->paginate(5) :
+                Customer::where('customer_name', 'like', '%' . $this->search . '%')
+                        ->orWhere('customer_code', 'like', '%' . $this->search . '%')
+                        ->orWhere('customer_userid', 'like', '%' . $this->search . '%')
+                        ->latest()->paginate(5),
         ]);
     }
 }

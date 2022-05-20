@@ -70,11 +70,6 @@ class Create extends Component
             'sales_supow_name' => 'required',
             'sales_pengaju' => 'required',
             'pic_sas' => 'required',
-            // 'customer_ktp_image' => 'image|max:10240'
-            // 'customer_npwp_image' => 'image|max:10240',
-            // 'customer_sppkp_image' => 'image|max:10240',
-            // 'customer_store1_image' => 'image|max:10240',
-            // 'customer_store2_image' => 'image|max:10240',
         ]);
 
         $userid = date('dmY_his');
@@ -94,22 +89,40 @@ class Create extends Component
             $this->validate([
                 'customer_npwp_image' => 'image|max:10240'
             ]);
-        $npwp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp" . "." . $this->customer_npwp_image->extension();
+        $npwp_image_name  = md5(date('Y-m-d').rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
         $this->customer_npwp_image->storeAs('photos', $npwp_image_name);
 
         }
 
-        // $npwp_image_name = md5(date('Y-m-d').rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
-        // $this->customer_npwp_image->storeAs('photos', $npwp_image_name);
-        
-        // $sppkp_image_name = md5(date('Y-m-d').rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
-        // $this->customer_sppkp_image->storeAs('photos', $sppkp_image_name);
+        $sppkp_image_name  = "";
+        if (isset($this->customer_sppkp_image)){
+            $this->validate([
+                'customer_sppkp_image' => 'image|max:10240'
+            ]);
+        $sppkp_image_name  = md5(date('Y-m-d').rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
+        $this->customer_sppkp_image->storeAs('photos', $sppkp_image_name);
 
-        // $store1_image_name = md5(date('Y-m-d').rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
-        // $this->customer_store1_image->storeAs('photos', $store1_image_name);
-        
-        // $store2_image_name = md5(date('Y-m-d').rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
-        // $this->customer_store2_image->storeAs('photos', $store2_image_name);
+        }
+
+        $store1_image_name  = "";
+        if (isset($this->customer_store1_image)){
+            $this->validate([
+                'customer_store1_image' => 'image|max:10240'
+            ]);
+        $store1_image_name  = md5(date('Y-m-d').rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
+        $this->customer_store1_image->storeAs('photos', $store1_image_name);
+
+        }
+
+        $store2_image_name  = "";
+        if (isset($this->customer_store2_image)){
+            $this->validate([
+                'customer_store2_image' => 'image|max:10240'
+            ]);
+        $store2_image_name  = md5(date('Y-m-d').rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
+        $this->customer_store2_image->storeAs('photos', $store2_image_name);
+
+        }
         
         $customer = Customer::create([
             'customer_code' => $this->customer_code,
@@ -141,9 +154,9 @@ class Create extends Component
             'pic_sas' => $this->pic_sas,
             'customer_ktp_image' => $ktp_image_name,
             'customer_npwp_image' => $npwp_image_name,
-            // 'customer_sppkp_image' => $sppkp_image_name,
-            // 'customer_store1_image' => $store1_image_name,
-            // 'customer_store2_image' => $store2_image_name,
+            'customer_sppkp_image' => $sppkp_image_name,
+            'customer_store1_image' => $store1_image_name,
+            'customer_store2_image' => $store2_image_name,
             'created_by' => auth()->user()->name,
         ]);
 
