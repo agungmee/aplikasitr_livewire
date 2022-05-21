@@ -7,10 +7,17 @@ Route::get('/', function () {
     return redirect()->route('auth.login');
 });
 
+//Login Customer
+Route::livewire('/customer/login/{id}', 'customer.login')->layout('layouts.app')->name('customer.login');
+
+//Confirm Customer
+Route::livewire('/customer/confirm/{id}', 'customer.confirm')->layout('layouts.app')->name('customer.confirm');
+
+
 Route::group(['middleware' => 'guest'], function(){
 
-    //login
-    Route::livewire('/login', 'auth.login')->layout('layouts.app')->name('auth.login');
+    //Login
+    Route::livewire('/login', 'auth.login')->layout('layouts.app')->name('auth.login');    
 
 });
 

@@ -1,5 +1,6 @@
 @section('title', 'TR APP | List Customers')
 
+
 <div>
     <div class="container-fluid mb-5" style="margin-top: 50px">
         <div class="row">
@@ -38,8 +39,8 @@
                             <table class="table table-bordered" style="white-space: nowrap">
                                 <thead class="thead-dark" style="text-align: center">
                                     <tr>
-                                        <th scope="col">KODE</th>
-                                        <th scope="col">NAMA CUSTOMER</th>
+                                        <th class="" scope="col">KODE</th>
+                                        <th class="" scope="col">NAMA CUSTOMER</th>
                                         <th scope="col">GRUP CUSTOMER</th>
                                         <th scope="col">ID CUSTOMER</th>
                                         <th scope="col">PASSWORD</th>
@@ -81,7 +82,7 @@
                                         <th scope="col">WAKTU DIBUAT</th>
                                         <th scope="col">DIUPDATE OLEH</th>
                                         <th scope="col">WAKTU DIUPDATE</th>
-                                        <th scope="col">AKSI</th>
+                                        <th class="td-fixed" scope="col">AKSI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -140,8 +141,9 @@
                                         <td>{{ $customer->created_at }}</td>
                                         <td>{{ $customer->updated_by }}</td>
                                         <td>{{ $customer->updated_at }}</td>
-                                        <td class="text-center">
+                                        <td class="text-center td-fixed">
                                             <a href=" {{route('data.customers.editcustomer', $customer->id)}} " class="btn btn-sm btn-primary">EDIT</a>
+                                            <a href=" {{route('customer.login', $customer->id)}} " class="btn btn-sm btn-success">CONFIRM</a>
                                             <button wire:click="destroy({{$customer->id}})" class="btn btn-sm btn-danger">DELETE</button>
                                         </td>
                                     </tr>

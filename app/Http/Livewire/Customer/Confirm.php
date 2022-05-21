@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Livewire\Data\Customers;
+namespace App\Http\Livewire\Customer;
+
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -10,8 +11,9 @@ use Illuminate\Support\Facades\Storage;
 
 date_default_timezone_set('Asia/Jakarta');
 
-class Edit extends Component
+class Confirm extends Component
 {   
+
     use WithFileUploads;
 
     public $customerId;
@@ -50,7 +52,6 @@ class Edit extends Component
     public $customer_check;
     public $admin_check;
     public $updated_by;
-
 
     public function mount(Request $request, $id)
     {
@@ -96,7 +97,7 @@ class Edit extends Component
         }
     }
 
-    public function update()
+    public function confirm()
     {   
         $this->validate([
             'customer_name' => 'required',
@@ -214,7 +215,7 @@ class Edit extends Component
 
                 $customer->update($data);
 
-        session()->flash('message', 'Data Berhasil Di Update');
+        session()->flash('message', 'Data Berhasil Di Confirm');
 
         return redirect()->route('data.customers.listcustomers');
     }
@@ -222,6 +223,6 @@ class Edit extends Component
     public function render()
     {   
         $customers = Customer::find($this->customerId);
-        return view('livewire.data.customers.edit', compact('customers'));
+        return view('livewire.customer.confirm', compact('customers'));
     }
 }
