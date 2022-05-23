@@ -14,8 +14,8 @@
                             <div class="form-group">
 
                                 <label class="font-weight-bold">USER ID</label>
-                                <input type="text" wire:model.lazy="customer_userid" class="form-control @error('userid') is-invalid @enderror" " placeholder="USER ID">
-                                @error('userid')
+                                <input type="text" wire:model="customer_userid" class="form-control @error('customer_userid') is-invalid @enderror" " placeholder="USER ID">
+                                @error('customer_userid')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -24,8 +24,8 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">PASSWORD</label>
-                                <input type="password" wire:model.lazy="customer_password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
-                                @error('password')
+                                <input type="password" wire:model.lazy="customer_password" class="form-control @error('customer_password') is-invalid @enderror" placeholder="Password">
+                                @error('customer_password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

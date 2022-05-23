@@ -1,10 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
-    return redirect()->route('auth.login');
+    if(Auth::check()) {
+        return redirect()->route('admin.dashboard');
+    }else {
+        return redirect()->route('auth.login');
+    }
 });
 
 //Login Customer

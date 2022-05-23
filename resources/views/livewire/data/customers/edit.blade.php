@@ -65,6 +65,19 @@
 
                                                         <div class="col-md-12">
                                                             <div class="form-group">
+                                                                <label class="font-weight-bold">CUSTOMER GROUP</label>
+                                                                <input type="text" wire:model="customer_group" class="form-control @error('customer_group') is-invalid @enderror"
+                                                                    placeholder="Grup Customer">
+                                                                @error('customer_group')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
                                                                 <label class="font-weight-bold">CABANG</label>
                                                                 <select wire:model="customer_cabang" class="form-control @error('customer_cabang') is-invalid @enderror">
                                                                     <option selected>-- Pilih Cabang --</option>

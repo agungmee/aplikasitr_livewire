@@ -16,6 +16,7 @@ class Create extends Component
 
     public $customer_code;
     public $customer_name;
+    public $customer_group;
     public $customer_userid;
     public $customer_password;
     public $customer_cabang;
@@ -127,6 +128,7 @@ class Create extends Component
         $customer = Customer::create([
             'customer_code' => $this->customer_code,
             'customer_name' => $this->customer_name,
+            'customer_group' => $this->customer_group,
             'customer_userid' => $userid,
             'customer_password' => rand(111111,999999),
             'customer_cabang' => $this->customer_cabang,

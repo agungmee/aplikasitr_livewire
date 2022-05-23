@@ -17,6 +17,7 @@ class Edit extends Component
     public $customerId;
     public $customer_code;
     public $customer_name;
+    public $customer_group;
     public $customer_userid;
     public $customer_password;
     public $customer_cabang;
@@ -60,6 +61,7 @@ class Edit extends Component
             $this->customerId = $customer->id;
             $this->customer_code = $customer->customer_code;
             $this->customer_name = $customer->customer_name;
+            $this->customer_group = $customer->customer_group;
             $this->customer_userid = $customer->customer_userid;
             $this->customer_password = $customer->customer_password;
             $this->customer_cabang = $customer->customer_cabang;
@@ -124,6 +126,7 @@ class Edit extends Component
                     $data = [
                         'customer_code' => $this->customer_code,
                         'customer_name' => $this->customer_name,
+                        'customer_group' => $this->customer_group,
                         'customer_cabang' => $this->customer_cabang,
                         'customer_territory' => $this->customer_territory,
                         'customer_address' => $this->customer_address,

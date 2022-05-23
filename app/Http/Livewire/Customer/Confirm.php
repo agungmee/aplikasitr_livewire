@@ -50,7 +50,6 @@ class Confirm extends Component
     public $customer_store1_image;
     public $customer_store2_image;
     public $customer_check;
-    public $admin_check;
     public $updated_by;
 
     public function mount(Request $request, $id)
@@ -92,7 +91,6 @@ class Confirm extends Component
             $this->customer_store1_image = $request->customer_store1_image;
             $this->customer_store2_image = $request->customer_store2_image;
             $this->customer_check = $customer->customer_check;
-            $this->admin_check = $customer->admin_check;
             $this->updated_by = $customer->updated_by;
         }
     }
@@ -116,7 +114,14 @@ class Confirm extends Component
             'sales_supow_name' => 'required',
             'sales_pengaju' => 'required',
             'pic_sas' => 'required',
+            'customer_check' => 'required',
         ]);
+
+        if($this->customer_check == 0) {
+            $this->customer_check = "No";
+        }else {
+            $this->customer_check = "Done";
+        }
 
         if($this->customerId) {
             $customer = Customer::find($this->customerId);
@@ -148,6 +153,7 @@ class Confirm extends Component
                         'sales_supow_name' => $this->sales_supow_name,
                         'sales_pengaju' => $this->sales_pengaju,
                         'pic_sas' => $this->pic_sas,
+                        'customer_check' => $this->customer_check,
                         'updated_by' => auth()->user()->name,
                     ];
                 }

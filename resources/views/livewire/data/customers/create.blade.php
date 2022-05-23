@@ -39,9 +39,9 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">KODE</label>
-                                                                <input type="text" wire:model.lazy="customer_code" class="form-control @error('code') is-invalid @enderror"
+                                                                <input type="text" wire:model.lazy="customer_code" class="form-control @error('customer_code') is-invalid @enderror"
                                                                     placeholder="Kode">
-                                                                @error('code')
+                                                                @error('customer_code')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
                                                                 </div>
@@ -52,9 +52,22 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">NAMA CUSTOMER</label>
-                                                                <input type="text" wire:model.lazy="customer_name" class="form-control @error('name') is-invalid @enderror"
+                                                                <input type="text" wire:model.lazy="customer_name" class="form-control @error('customer_name') is-invalid @enderror"
                                                                     placeholder="Nama Customer">
-                                                                @error('name')
+                                                                @error('customer_name')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="font-weight-bold">CUSTOMER GROUP</label>
+                                                                <input type="text" wire:model.lazy="customer_group" class="form-control @error('customer_group') is-invalid @enderror"
+                                                                    placeholder="Grup Customer">
+                                                                @error('customer_group')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
                                                                 </div>

@@ -496,6 +496,18 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div class="col-auto my-1">
+                                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                              <input type="checkbox" wire:model="customer_check" class="custom-control-input @error('customer_check') is-invalid @enderror" id="customControlAutosizing" required checked>
+                                                              <label class="custom-control-label" for="customControlAutosizing">Setelah mengecek dan menyesuaikan data yang ada diatas, maka dengan checkbox ini saya menyatakan bahwa data diatas sudah benar dan sesuai untuk digunakan pada transaksi di PT. Sahabat Abadi Sejahtera </label>
+                                                            </div>
+                                                            @error('customer_check')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                            @enderror
+                                                        </div>
                                                     
                                                         <button type="submit" class="btn btn-primary btn-block">CONFIRM DATA</button>
                                                     </div>
