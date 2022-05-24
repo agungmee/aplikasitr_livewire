@@ -1,3 +1,4 @@
 Buat validasi login confirm saat sudah tidak bisa
 Buat middleware untuk confirm
-Buat ucapan telah selesai dan redirect ke situs SAS 
+Buat ucapan telah selesai dan redirect ke situs SAS
+Perbaiki halaman mobile untuk confirm data customer

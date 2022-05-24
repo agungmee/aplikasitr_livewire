@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
+
     if(Auth::check()) {
         return redirect()->route('admin.dashboard');
     }else {
         return redirect()->route('auth.login');
     }
+
 });
 
 //Login Customer
@@ -22,7 +24,7 @@ Route::livewire('/customer/confirm/{id}', 'customer.confirm')->layout('layouts.a
 Route::group(['middleware' => 'guest'], function(){
 
     //Login
-    Route::livewire('/login', 'auth.login')->layout('layouts.app')->name('auth.login');    
+    Route::livewire('/login', 'auth.login')->layout('layouts.app')->name('auth.login');
 
 });
 
