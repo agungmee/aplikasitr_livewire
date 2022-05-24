@@ -22,7 +22,6 @@ Route::livewire('/customer/confirm/{id}', 'customer.confirm')->layout('layouts.a
 
 
 Route::group(['middleware' => 'guest'], function(){
-
     //Login
     Route::livewire('/login', 'auth.login')->layout('layouts.app')->name('auth.login');
 

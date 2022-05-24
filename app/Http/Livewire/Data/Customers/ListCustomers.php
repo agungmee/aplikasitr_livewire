@@ -14,9 +14,9 @@ class ListCustomers extends Component
     protected $updatesQueryString = ['search'];
     public $search;
 
-    public function destroy($customerId)
+    public function destroy($id)
     {   
-        $customer = Customer::find($customerId);
+        $customer = Customer::find($id);
 
         if($customer) {
             Storage::disk('public')->delete('photos/'. $customer->customer_ktp_image);
@@ -25,8 +25,11 @@ class ListCustomers extends Component
             Storage::disk('public')->delete('photos/'. $customer->customer_store1_image);
             Storage::disk('public')->delete('photos/'. $customer->customer_store2_image);
             $customer->delete();
-
         }
+
+        session()->flash('message', 'Data Berhasil Dihapus.');
+
+        return redirect()->route('data.customers.listcustomers');
     }
 
     public function render()

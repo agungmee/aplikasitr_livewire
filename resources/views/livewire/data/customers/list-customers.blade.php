@@ -1,6 +1,5 @@
 @section('title', 'TR APP | List Customers')
 
-
 <div>
     <div class="container-fluid mb-5" style="margin-top: 50px">
         <div class="row">
@@ -119,7 +118,7 @@
                                         <td>{{ $customer->sales_pengaju }}</td>
                                         <td>{{ $customer->pic_sas }}</td>
                                         <td>
-                                            <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_ktp_image}} " alt="" srcset="">
+                                            <img width="100px" height="70" src=" /storage/photos/{{ $customer->customer_ktp_image}} " alt="" srcset="">
                                         </td>
                                         <td>
                                             <img width="100px" height="70" src=" /storage/photos/{{$customer->customer_npwp_image}} " alt="" srcset="">
@@ -144,7 +143,7 @@
                                         <td class="text-center td-fixed">
                                             <a href=" {{route('data.customers.editcustomer', $customer->id)}} " class="btn btn-sm btn-primary">EDIT</a>
                                             <a href=" {{route('customer.login', $customer->id)}} " class="btn btn-sm btn-success">CONFIRM</a>
-                                            <button wire:click="destroy({{$customer->id}})" class="btn btn-sm btn-danger">DELETE</button>
+                                            <button wire:click="destroy('{{$customer->id}}')" class="btn btn-sm btn-danger">DELETE</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -160,3 +159,24 @@
     </div>
 </div>
 
+{{-- <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+</script> --}}
