@@ -90,7 +90,7 @@ class Confirm extends Component
             $this->customer_sppkp_image = $request->customer_sppkp_image;
             $this->customer_store1_image = $request->customer_store1_image;
             $this->customer_store2_image = $request->customer_store2_image;
-            $this->customer_check = $customer->customer_check;
+            $this->customer_check = $request->customer_check;
             $this->updated_by = $customer->updated_by;
         }
     }
@@ -116,6 +116,8 @@ class Confirm extends Component
             'pic_sas' => 'required',
             'customer_check' => 'required',
         ]);
+
+        $update_time_customer = date('d m y h:i:s');
 
         if($this->customer_check == 0) {
             $this->customer_check = "No";
@@ -155,6 +157,7 @@ class Confirm extends Component
                         'pic_sas' => $this->pic_sas,
                         'customer_check' => $this->customer_check,
                         'updated_by' => auth()->user()->name,
+                        'update_time_customer' => $update_time_customer,
                     ];
                 }
             }

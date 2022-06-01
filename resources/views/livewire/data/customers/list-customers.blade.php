@@ -143,7 +143,7 @@
                                         <td class="text-center td-fixed">
                                             <a href=" {{route('data.customers.editcustomer', $customer->id)}} " class="btn btn-sm btn-primary">EDIT</a>
                                             <a href=" {{route('customer.login', $customer->id)}} " class="btn btn-sm btn-success">CONFIRM</a>
-                                            <button wire:click="destroy('{{$customer->id}}')" class="btn btn-sm btn-danger">DELETE</button>
+                                            <button type="button" onclick="confirm('Are you sure you want to remove the user from this group?') || event.stopImmediatePropagation()" wire:click="destroy('{{$customer->id}}')" class="btn btn-sm btn-danger">DELETE</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -158,25 +158,3 @@
         </div>
     </div>
 </div>
-
-{{-- <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-</script> --}}

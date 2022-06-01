@@ -50,7 +50,7 @@ class CreateCustomersTable extends Migration
             $table->string('customer_sppkp_image')->nullable();
             $table->string('customer_store1_image')->nullable();
             $table->string('customer_store2_image')->nullable();
-            $table->string('customer_check')->default('Prepare')->nullable();
+            $table->string('customer_check')->default('No')->nullable();
             $table->string('admin_check')->default('No')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

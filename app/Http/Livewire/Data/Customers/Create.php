@@ -81,7 +81,7 @@ class Create extends Component
                 'customer_ktp_image' => 'image|max:10240'
             ]);
         $ktp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
-        $this->customer_ktp_image->storeAs('photos', $ktp_image_name);
+        $this->customer_ktp_image->storeAs('photos/', $ktp_image_name);
 
         }
 
@@ -91,7 +91,7 @@ class Create extends Component
                 'customer_npwp_image' => 'image|max:10240'
             ]);
         $npwp_image_name  = md5(date('Y-m-d').rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
-        $this->customer_npwp_image->storeAs('photos', $npwp_image_name);
+        $this->customer_npwp_image->storeAs('photos/', $npwp_image_name);
 
         }
 
@@ -101,7 +101,7 @@ class Create extends Component
                 'customer_sppkp_image' => 'image|max:10240'
             ]);
         $sppkp_image_name  = md5(date('Y-m-d').rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
-        $this->customer_sppkp_image->storeAs('photos', $sppkp_image_name);
+        $this->customer_sppkp_image->storeAs('photos/', $sppkp_image_name);
 
         }
 
@@ -111,7 +111,7 @@ class Create extends Component
                 'customer_store1_image' => 'image|max:10240'
             ]);
         $store1_image_name  = md5(date('Y-m-d').rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
-        $this->customer_store1_image->storeAs('photos', $store1_image_name);
+        $this->customer_store1_image->storeAs('photos/', $store1_image_name);
 
         }
 
@@ -121,7 +121,7 @@ class Create extends Component
                 'customer_store2_image' => 'image|max:10240'
             ]);
         $store2_image_name  = md5(date('Y-m-d').rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
-        $this->customer_store2_image->storeAs('photos', $store2_image_name);
+        $this->customer_store2_image->storeAs('photos/', $store2_image_name);
 
         }
         

@@ -31,7 +31,7 @@ class Login extends Component
 
         $customer = Customer::find($this->customerId)->where('id',$this->customerId)->first();
         
-        if($customer->customer_check == "No" && $customer->customer_userid == $this->customer_userid && $customer->customer_password == $this->customer_password) {
+        if($customer->customer_check !== "Done" && $customer->customer_userid == $this->customer_userid && $customer->customer_password == $this->customer_password) {
             redirect()->route('customer.confirm', $this->customerId);
         }
     }

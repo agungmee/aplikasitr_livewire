@@ -458,7 +458,7 @@
                                                                     <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_sppkp_image}} " alt="" srcset="">
                                                                     
                                                                     <div class="input-group mb-3 ml-5">
-                                                                        <input type="file" wire:model="customer_sppkp_image" class="form-control" id="inputGroupFile02">
+                                                                        <input type="file" name="customer_sppkp_image" wire:model="customer_sppkp_image" class="form-control" id="inputGroupFile02">
                                                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                                                     </div>                                                                  
                                                                     @error('customer_sppkp_image')
@@ -478,7 +478,7 @@
                                                                     <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_store1_image}} " alt="" srcset="">
                                                                     
                                                                     <div class="input-group mb-3 ml-5">
-                                                                        <input type="file" wire:model="customer_store1_image" class="form-control" id="inputGroupFile02">
+                                                                        <input type="file" name="customer_store1_image" wire:model="customer_store1_image" class="form-control" id="inputGroupFile02">
                                                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                                                     </div>                                                                  
                                                                     @error('customer_store1_image')
@@ -498,7 +498,7 @@
                                                                     <img width="100px" height="70" src=" /storage/photos/{{$customers->customer_store2_image}} " alt="" srcset="">
                                                                     
                                                                     <div class="input-group mb-3 ml-5">
-                                                                        <input type="file" wire:model="customer_store2_image" class="form-control" id="inputGroupFile02">
+                                                                        <input type="file" name="customer_store2_image" wire:model="customer_store2_image" class="form-control" id="inputGroupFile02">
                                                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                                                     </div>                                                                  
                                                                     @error('customer_store2_image')
