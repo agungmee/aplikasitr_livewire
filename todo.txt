@@ -1,4 +1,8 @@
-Buat validasi login confirm saat sudah tidak bisa
-Buat middleware untuk confirm
-Buat ucapan telah selesai dan redirect ke situs SAS
+Short Term
+Sementara hardcode untuk nama sales (buat di view create dan edit), pakai id user idempiere
+Buat route ke confirm tanpa login, pake uuid cukup
 Perbaiki halaman mobile untuk confirm data customer
+Buat ucapan telah selesai dan redirect ke situs SAS
+
+Long Term
+Buat database user untuk sales supaya dinamis

@@ -4,14 +4,15 @@ namespace App\Http\Livewire\Data\Customers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Employee;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 date_default_timezone_set('Asia/Jakarta');
 
 class Create extends Component
-{   
-    
+{
+
     use WithFileUploads;
 
     public $customer_code;
@@ -52,7 +53,7 @@ class Create extends Component
     public $created_by;
     public $updated_by;
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate([
             'customer_name' => 'required',
@@ -74,63 +75,60 @@ class Create extends Component
         ]);
 
         $userid = date('dmY_his');
-        
+
+
+
         $ktp_image_name  = "";
-        if (isset($this->customer_ktp_image)){
-            $this->validate([
+        if ($foto_ktp = $request->file('customer_ktp_image')) {
+            $request->validate([
                 'customer_ktp_image' => 'image|max:10240'
             ]);
-        $ktp_image_name  = md5(date('Y-m-d').rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
-        $this->customer_ktp_image->storeAs('photos/', $ktp_image_name);
-
+            $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $foto_ktp->getClientOriginalExtension();
+            $foto_ktp->move('store/photo/', $ktp_image_name);
         }
 
         $npwp_image_name  = "";
-        if (isset($this->customer_npwp_image)){
+        if (isset($this->customer_npwp_image)) {
             $this->validate([
                 'customer_npwp_image' => 'image|max:10240'
             ]);
-        $npwp_image_name  = md5(date('Y-m-d').rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
-        $this->customer_npwp_image->storeAs('photos/', $npwp_image_name);
-
+            $npwp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
+            $this->customer_npwp_image->storeAs('photos/', $npwp_image_name);
         }
 
         $sppkp_image_name  = "";
-        if (isset($this->customer_sppkp_image)){
+        if (isset($this->customer_sppkp_image)) {
             $this->validate([
                 'customer_sppkp_image' => 'image|max:10240'
             ]);
-        $sppkp_image_name  = md5(date('Y-m-d').rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
-        $this->customer_sppkp_image->storeAs('photos/', $sppkp_image_name);
-
+            $sppkp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
+            $this->customer_sppkp_image->storeAs('photos/', $sppkp_image_name);
         }
 
         $store1_image_name  = "";
-        if (isset($this->customer_store1_image)){
+        if (isset($this->customer_store1_image)) {
             $this->validate([
                 'customer_store1_image' => 'image|max:10240'
             ]);
-        $store1_image_name  = md5(date('Y-m-d').rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
-        $this->customer_store1_image->storeAs('photos/', $store1_image_name);
-
+            $store1_image_name  = md5(date('Y-m-d') . rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
+            $this->customer_store1_image->storeAs('photos/', $store1_image_name);
         }
 
         $store2_image_name  = "";
-        if (isset($this->customer_store2_image)){
+        if (isset($this->customer_store2_image)) {
             $this->validate([
                 'customer_store2_image' => 'image|max:10240'
             ]);
-        $store2_image_name  = md5(date('Y-m-d').rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
-        $this->customer_store2_image->storeAs('photos/', $store2_image_name);
-
+            $store2_image_name  = md5(date('Y-m-d') . rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
+            $this->customer_store2_image->storeAs('photos/', $store2_image_name);
         }
-        
+
         $customer = Customer::create([
             'customer_code' => $this->customer_code,
             'customer_name' => $this->customer_name,
             'customer_group' => $this->customer_group,
             'customer_userid' => $userid,
-            'customer_password' => rand(111111,999999),
+            'customer_password' => rand(111111, 999999),
             'customer_cabang' => $this->customer_cabang,
             'customer_territory' => $this->customer_territory,
             'customer_address' => $this->customer_address,
@@ -169,6 +167,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.data.customers.create');
+        $employees = Employee::get();
+        return view('livewire.data.customers.create', compact('employees'));
     }
 }

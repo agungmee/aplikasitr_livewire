@@ -344,14 +344,12 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
-                                                        
+                                                       
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Sales Philips</label>
                                                                 <select wire:model="sales_philips_name" class="form-control @error('sales_philips_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Nama Sales Philips --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
                                                                 </select>
                                                                 @error('sales_philips_name')
                                                                 <div class="invalid-feedback">
@@ -366,8 +364,6 @@
                                                                 <label class="font-weight-bold">Sales Supow</label>
                                                                 <select wire:model="sales_supow_name" class="form-control @error('sales_supow_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Supow --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
                                                                 </select>
                                                                 @error('sales_supow_name')
                                                                 <div class="invalid-feedback">
@@ -382,8 +378,6 @@
                                                                 <label class="font-weight-bold">Sales Pengaju</label>
                                                                 <select wire:model="sales_pengaju" class="form-control @error('sales_pengaju') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Pengaju --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
                                                                 </select>
                                                                 @error('sales_pengaju')
                                                                 <div class="invalid-feedback">

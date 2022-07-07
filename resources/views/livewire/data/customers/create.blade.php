@@ -349,8 +349,9 @@
                                                                 <label class="font-weight-bold">Sales Philips</label>
                                                                 <select wire:model.lazy="sales_philips_name" class="form-control @error('sales_philips_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Nama Sales Philips --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_philips_name')
                                                                 <div class="invalid-feedback">
@@ -365,8 +366,9 @@
                                                                 <label class="font-weight-bold">Sales Supow</label>
                                                                 <select wire:model.lazy="sales_supow_name" class="form-control @error('sales_supow_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Supow --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_supow_name')
                                                                 <div class="invalid-feedback">
@@ -375,14 +377,15 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
-
+                                                           
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="font-weight-bold">Sales Pengaju</label>
                                                                 <select wire:model.lazy="sales_pengaju" class="form-control @error('sales_pengaju') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Pengaju --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_pengaju')
                                                                 <div class="invalid-feedback">
@@ -397,8 +400,10 @@
                                                                 <label class="font-weight-bold">DA PIC</label>
                                                                 <select wire:model.lazy="pic_sas" class="form-control @error('pic_sas') is-invalid @enderror">
                                                                     <option selected>-- Pilih DA PIC --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
+                                                                    <option value="Faizal">Faizal</option>
+                                                                    <option value="Nanda">Nanda</option>
+                                                                    <option value="Ferdy">Ferdy</option>
+                                                                    <option value="Wahyudin">Wahyudin</option>
                                                                 </select>
                                                                 @error('pic_sas')
                                                                 <div class="invalid-feedback">
