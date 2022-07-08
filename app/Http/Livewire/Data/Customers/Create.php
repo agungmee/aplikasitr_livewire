@@ -84,7 +84,7 @@ class Create extends Component
                 'customer_ktp_image' => 'image|max:10240'
             ]);
             $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $foto_ktp->getClientOriginalExtension();
-            $foto_ktp->move('store/photo/', $ktp_image_name);
+            $this->customer_ktp_image->storeAs('photos/', $ktp_image_name);
         }
 
         $npwp_image_name  = "";

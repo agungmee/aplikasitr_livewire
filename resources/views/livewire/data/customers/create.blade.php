@@ -432,7 +432,7 @@
                                                                 <div class="input-group mb-3">
                                                                     <input type="file" wire:model.lazy="customer_npwp_image" class="form-control" id="inputGroupFile02">
                                                                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                                </div>                                                                  
+                                                                </div>
                                                             </div>
                                                         </div>
                                                          
@@ -442,7 +442,7 @@
                                                                 <div class="input-group mb-3">
                                                                     <input type="file" wire:model.lazy="customer_sppkp_image" class="form-control" id="inputGroupFile02">
                                                                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                                </div>                                                                  
+                                                                </div>
                                                             </div>
                                                         </div>
                                                          
