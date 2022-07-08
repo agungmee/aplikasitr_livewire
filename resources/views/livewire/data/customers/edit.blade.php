@@ -20,6 +20,7 @@
                 </div>
             </div>
             </div>
+            
             <div class="col-md-9">
                 <div class="card border-0 rounded shadow">
                     <div class="card-body">
@@ -350,6 +351,9 @@
                                                                 <label class="font-weight-bold">Sales Philips</label>
                                                                 <select wire:model="sales_philips_name" class="form-control @error('sales_philips_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Nama Sales Philips --</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_philips_name')
                                                                 <div class="invalid-feedback">
@@ -364,6 +368,9 @@
                                                                 <label class="font-weight-bold">Sales Supow</label>
                                                                 <select wire:model="sales_supow_name" class="form-control @error('sales_supow_name') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Supow --</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_supow_name')
                                                                 <div class="invalid-feedback">
@@ -378,6 +385,9 @@
                                                                 <label class="font-weight-bold">Sales Pengaju</label>
                                                                 <select wire:model="sales_pengaju" class="form-control @error('sales_pengaju') is-invalid @enderror">
                                                                     <option selected>-- Pilih Sales Pengaju --</option>
+                                                                    @foreach ($employees as $employee)
+                                                                    <option value="{{$employee->username}}">{{$employee->username}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                                 @error('sales_pengaju')
                                                                 <div class="invalid-feedback">
@@ -392,8 +402,10 @@
                                                                 <label class="font-weight-bold">DA PIC</label>
                                                                 <select wire:model="pic_sas" class="form-control @error('pic_sas') is-invalid @enderror">
                                                                     <option selected>-- Pilih DA PIC --</option>
-                                                                    <option value="Imam Sudadi">Imam Sudadi</option>
-                                                                    <option value="Slamet Widiono">Slamet Widiono</option>
+                                                                    <option value="Faizal">Faizal</option>
+                                                                    <option value="Nanda">Nanda</option>
+                                                                    <option value="Ferdy">Ferdy</option>
+                                                                    <option value="Wahyudin">Wahyudin</option>
                                                                 </select>
                                                                 @error('pic_sas')
                                                                 <div class="invalid-feedback">

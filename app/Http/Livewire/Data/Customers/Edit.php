@@ -221,6 +221,7 @@ class Edit extends Component
     public function render()
     {
         $customers = Customer::find($this->customerId);
-        return view('livewire.data.customers.edit', compact('customers'));
+        $employees = Employee::get();
+        return view('livewire.data.customers.edit', compact('customers', 'employees'));
     }
 }
