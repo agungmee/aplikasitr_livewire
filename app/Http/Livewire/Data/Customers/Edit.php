@@ -161,7 +161,9 @@ class Edit extends Component
             $this->validate([
                 'customer_ktp_image' => 'image|max:10240'
             ]);
-            Storage::disk('public')->delete('photos/' . $customer->customer_ktp_image);
+            if (!empty($customer->customer_ktp_image)) {
+                Storage::disk('public')->delete('photos/' . $customer->customer_ktp_image);
+            }
             $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
             $this->customer_ktp_image->storeAs('photos/', $ktp_image_name);
             $data['customer_ktp_image'] = $ktp_image_name;
@@ -172,7 +174,9 @@ class Edit extends Component
             $this->validate([
                 'customer_npwp_image' => 'image|max:10240'
             ]);
-            Storage::disk('public')->delete('photos/' . $customer->customer_npwp_image);
+            if (!empty($customer->customer_npwp_image)) {
+                Storage::disk('public')->delete('photos/' . $customer->customer_npwp_image);
+            }
             $npwp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "npwp" . "." . $this->customer_npwp_image->extension();
             $this->customer_npwp_image->storeAs('photos/', $npwp_image_name);
             $data['customer_npwp_image'] = $npwp_image_name;
@@ -183,7 +187,9 @@ class Edit extends Component
             $this->validate([
                 'customer_sppkp_image' => 'image|max:10240'
             ]);
-            Storage::disk('public')->delete('photos/' . $customer->customer_sppkp_image);
+            if (!empty($customer->customer_sppkp_image)) {
+                Storage::disk('public')->delete('photos/' . $customer->customer_sppkp_image);
+            }
             $sppkp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "sppkp" . "." . $this->customer_sppkp_image->extension();
             $this->customer_sppkp_image->storeAs('photos/', $sppkp_image_name);
             $data['customer_sppkp_image'] = $sppkp_image_name;
@@ -194,7 +200,9 @@ class Edit extends Component
             $this->validate([
                 'customer_store1_image' => 'image|max:10240'
             ]);
-            Storage::disk('public')->delete('photos/' . $customer->customer_store1_image);
+            if (!empty($customer->customer_store1_image)) {
+                Storage::disk('public')->delete('photos/' . $customer->customer_store1_image);
+            }
             $store1_image_name  = md5(date('Y-m-d') . rand()) . "_" . "store1" . "." . $this->customer_store1_image->extension();
             $this->customer_store1_image->storeAs('photos/', $store1_image_name);
             $data['customer_store1_image'] = $store1_image_name;
@@ -205,7 +213,9 @@ class Edit extends Component
             $this->validate([
                 'customer_store2_image' => 'image|max:10240'
             ]);
-            Storage::disk('public')->delete('photos/' . $customer->customer_store2_image);
+            if (!empty($customer->customer_store2_image)) {
+                Storage::disk('public')->delete('photos/' . $customer->customer_store2_image);
+            }
             $store2_image_name  = md5(date('Y-m-d') . rand()) . "_" . "store2" . "." . $this->customer_store2_image->extension();
             $this->customer_store2_image->storeAs('photos/', $store2_image_name);
             $data['customer_store2_image'] = $store2_image_name;
