@@ -79,8 +79,8 @@ class Create extends Component
 
 
         $ktp_image_name  = "";
-        if ($foto_ktp = $request->file('customer_ktp_image')) {
-            $request->validate([
+        if (isset($this->customer_ktp_image)) {
+            $this->validate([
                 'customer_ktp_image' => 'image|max:10240'
             ]);
             $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
