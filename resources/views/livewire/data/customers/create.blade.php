@@ -214,6 +214,7 @@
                                                                     <option value="GL">GL</option>
                                                                     <option value="TB">TB</option>
                                                                     <option value="SMM">SMM</option>
+                                                                    <option value="PT/CV">PT/CV</option>
                                                                     <option value="OTHERS">OTHERS</option>
                                                                 </select>
                                                                 @error('customer_type')

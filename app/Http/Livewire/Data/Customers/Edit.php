@@ -102,22 +102,22 @@ class Edit extends Component
     public function update()
     {
         $this->validate([
-            'customer_name' => 'required',
-            'customer_cabang' => 'required',
-            'customer_territory' => 'required',
-            'customer_address' => 'required',
-            'customer_province' => 'required',
-            'customer_city' => 'required',
-            'customer_district' => 'required',
-            'customer_village' => 'required',
-            'customer_postal_code' => 'required',
-            'customer_contact' => 'required',
-            'customer_type' => 'required',
-            'customer_phone1' => 'required',
-            'sales_philips_name' => 'required',
-            'sales_supow_name' => 'required',
-            'sales_pengaju' => 'required',
-            'pic_sas' => 'required',
+            // 'customer_name' => 'required',
+            // 'customer_cabang' => 'required',
+            // 'customer_territory' => 'required',
+            // 'customer_address' => 'required',
+            // 'customer_province' => 'required',
+            // 'customer_city' => 'required',
+            // 'customer_district' => 'required',
+            // 'customer_village' => 'required',
+            // 'customer_postal_code' => 'required',
+            // 'customer_contact' => 'required',
+            // 'customer_type' => 'required',
+            // 'customer_phone1' => 'required',
+            // 'sales_philips_name' => 'required',
+            // 'sales_supow_name' => 'required',
+            // 'sales_pengaju' => 'required',
+            // 'pic_sas' => 'required',
         ]);
 
         if ($this->customerId) {

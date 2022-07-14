@@ -56,22 +56,22 @@ class Create extends Component
     public function store(Request $request)
     {
         $this->validate([
-            'customer_name' => 'required',
-            'customer_cabang' => 'required',
-            'customer_territory' => 'required',
-            'customer_address' => 'required',
-            'customer_province' => 'required',
-            'customer_city' => 'required',
-            'customer_district' => 'required',
-            'customer_village' => 'required',
-            'customer_postal_code' => 'required',
-            'customer_contact' => 'required',
-            'customer_type' => 'required',
-            'customer_phone1' => 'required',
-            'sales_philips_name' => 'required',
-            'sales_supow_name' => 'required',
-            'sales_pengaju' => 'required',
-            'pic_sas' => 'required',
+            // 'customer_name' => 'required',
+            // 'customer_cabang' => 'required',
+            // 'customer_territory' => 'required',
+            // 'customer_address' => 'required',
+            // 'customer_province' => 'required',
+            // 'customer_city' => 'required',
+            // 'customer_district' => 'required',
+            // 'customer_village' => 'required',
+            // 'customer_postal_code' => 'required',
+            // 'customer_contact' => 'required',
+            // 'customer_type' => 'required',
+            // 'customer_phone1' => 'required',
+            // 'sales_philips_name' => 'required',
+            // 'sales_supow_name' => 'required',
+            // 'sales_pengaju' => 'required',
+            // 'pic_sas' => 'required',
         ]);
 
         $userid = date('dmY_his');
@@ -83,7 +83,7 @@ class Create extends Component
             $request->validate([
                 'customer_ktp_image' => 'image|max:10240'
             ]);
-            $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $foto_ktp->getClientOriginalExtension();
+            $ktp_image_name  = md5(date('Y-m-d') . rand()) . "_" . "ktp" . "." . $this->customer_ktp_image->extension();
             $this->customer_ktp_image->storeAs('photos/', $ktp_image_name);
         }
 
